@@ -1,0 +1,1 @@
+/Users/erwanrivet/Documents/perso/wanerivet/web/app/plugins/query-monitor/wp-content/db.php
