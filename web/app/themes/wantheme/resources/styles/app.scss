@@ -1,42 +1,13 @@
-//@import 'tailwindcss/base';
-//@import 'tailwindcss/components';
-//@import 'tailwindcss/utilities';
-@import url(https://fonts.bunny.net/css?family=aldrich:400);
-@import url(https://fonts.bunny.net/css?family=biz-udpmincho:400);
+@import "commons/common";
 @import 'components/header';
 @import 'components/footer';
 
-[data-expand-target] {
-  overflow: hidden;
-  position: relative;
-}
-
-[data-expand-link]:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  margin: -250px;
-}
-
-$font-title: 'Aldrich', sans-serif;
-$font-text: 'BIZ UDPMincho', serif;
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-title;
-}
-body, html, p, ul, ol, a, button, input, textarea, div {
-  font-family: $font-text;
-}
-.main {
-  padding: 1.5rem 0;
-  max-width: 1440px;
-  margin: 0 auto;
-}
-.archive-post-thumbnail img{
-  max-width: 100px;
-  height: auto;
-}
+//.main {
+//  padding: 1.5rem 0;
+//  max-width: 1440px;
+//  margin: 0 auto;
+//}
+//.archive-post-thumbnail img{
+//  max-width: 100px;
+//  height: auto;
+//}

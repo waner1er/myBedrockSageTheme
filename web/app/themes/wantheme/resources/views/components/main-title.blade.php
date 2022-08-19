@@ -1,4 +1,4 @@
-<div class="text-2xl text-center lg:my-10">
+<div class="main-title">
   @yield('title')
 </div>
 
