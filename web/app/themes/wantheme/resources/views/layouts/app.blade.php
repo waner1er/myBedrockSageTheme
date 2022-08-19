@@ -1,4 +1,4 @@
-<a class="sr-only focus:not-sr-only" href="#main">
+<a class="sr-only focus:not-sr-only" href="#main" hidden>
   {{ __('Skip to content') }}
 </a>
 

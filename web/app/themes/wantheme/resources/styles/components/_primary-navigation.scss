@@ -1,0 +1,32 @@
+
+.primary-navigation {
+  position: relative;
+
+  &__list {
+    max-height: 500px;
+    transition: max-height 0.5s;
+  position: fixed;
+    top: 0;
+    width: 100%;
+    background: $r1-color-white ;
+    &.hidden {
+      max-height: 0;
+      transition: max-height 0.5s;
+      overflow: hidden;
+    }
+
+    &__item {
+      a {
+        text-decoration: none;
+        color: $r1-color-black;
+
+      }
+
+      &:hover {
+        a {
+          color: red;
+        }
+      }
+    }
+  }
+}

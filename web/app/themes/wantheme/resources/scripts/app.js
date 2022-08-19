@@ -9,7 +9,16 @@ const main = async (err) => {
     console.error(err);
   }
 
-  // application code
+  function toggleNavMenu() {
+    let toggle = document.querySelector('.nav-toggle'),
+      sidebar = document.querySelector('#menu-primary');
+
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      sidebar.classList.toggle('hidden');
+    });
+  }
+  toggleNavMenu();
 };
 
 /**
