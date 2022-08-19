@@ -30,3 +30,5 @@ Update environment variables in the `.env` file. Wrap values that may contain no
 - Go to web/app/themes/wantheme 
 - `yarn install`
 - `yarn dev`
+- `composer require wpackagist-plugin/advanced-custom-fields`
+- activate the ACF plugin to enable category_thumbnail field
