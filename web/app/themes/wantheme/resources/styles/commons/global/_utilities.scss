@@ -1,0 +1,40 @@
+b,
+strong {
+    font-weight: $font-weight-bold;
+}
+/************
+    TITRES
+*************/
+ .main-title {
+    font-size: 2.8em;
+   font-family: $font-title;
+    font-weight: $font-weight-bold;
+    line-height: 1.2em;
+    margin-bottom: 1.2em;
+ }
+/************
+    TEXTES
+*************/
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-justify {
+    text-align: justify;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-bold {
+    font-weight: $font-weight-bold;
+}
+
+.text-content {
+    line-height: 2.8em;
+}
