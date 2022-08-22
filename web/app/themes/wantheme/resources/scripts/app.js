@@ -12,30 +12,26 @@ const main = async(err) => {
     function toggleNavMenu()
     {
         let toggle = document.querySelector('.nav-toggle'),
-        sidebar = document.querySelector('#menu-primary');
+        sidebar = document.querySelector('.primary-navigation');
         let logo = document.querySelector('.r1-custom-logo');
 
-        if (window.innerWidth <= 768) {
-          logo.classList.add('hidden');
+        if (window.innerWidth >= 960) {
+          sidebar.classList.remove('hidden');
         }
 
         toggle.addEventListener('click', function (e) {
             e.preventDefault();
             if (sidebar.classList.contains('hidden')) {
                 sidebar.classList.remove('hidden');
-                logo.classList.remove('hidden');
             } else {
                 sidebar.classList.add('hidden');
-                logo.classList.add('hidden');
             }
         });
         window.onresize = function () {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 960) {
                 sidebar.classList.add('hidden');
-                logo.classList.add('hidden');
             } else {
-                sidebar.classList.add('hidden');
-                logo.classList.remove('hidden');
+                sidebar.classList.remove('hidden');
             }
         }
     }
