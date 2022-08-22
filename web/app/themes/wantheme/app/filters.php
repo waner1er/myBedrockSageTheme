@@ -33,6 +33,14 @@ add_filter('nav_menu_css_class', function ($classes, $item, $args) {
     return $classes;
 }, 1, 3);
 
+add_filter('nav_menu_submenu_css_class', function ($classes, $args) {
+    if (isset($args->add_sub_menu_ul_class)) {
+        $classes[] = $args->add_sub_menu_ul_class;
+    }
+    return $classes;
+}, 1,2);
+
+
 add_filter('get_custom_logo', function ($html) {
     $custom_logo_id = get_theme_mod('custom_logo');
 
