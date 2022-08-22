@@ -1,0 +1,16 @@
+.nav-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  background: $r1-color-white;
+  border: 1px solid $r1-color-grey-darken;
+  border-radius: $r1-border-radius;
+  z-index: 1;
+  &:hover{
+    cursor: pointer;
+    background-color: $r1-color-grey-light;
+  }
+  @include minWidth(768px) {
+    display: none;
+  }
+}
