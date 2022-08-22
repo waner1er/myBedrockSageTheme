@@ -10,7 +10,7 @@
     cursor: pointer;
     background-color: $r1-color-grey-light;
   }
-  @include minWidth(768px) {
+  @include minWidth(960px) {
     display: none;
   }
 }

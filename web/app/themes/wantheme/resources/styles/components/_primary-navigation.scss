@@ -1,23 +1,21 @@
 
 .primary-navigation {
-  max-height: 500px;
+  max-height: 1000px;
   position: fixed;
   top: 0;
   width: 100%;
   background: $r1-color-white;
   background: $r1-color-grey-light;
   box-shadow: rgb(0 0 0 / 65%) 0px 0px 15px;
-  @include minWidth(768px) {
-    position: static;
-    display: flex;
+  &.hidden {
+    max-height: 0;
+    overflow: hidden;
   }
+    position: static;
 
   .r1-custom-logo {
     display: flex;
     justify-content: center;
-    &.hidden {
-      display: none;
-    }
   }
 
   &__list {
@@ -25,15 +23,16 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+
     &.hidden {
       max-height: 0;
       padding: 0;
       overflow: hidden;
-      @include minWidth(768px) {
-        max-height: 500px;
+      @include minWidth(960px) {
         padding: 5rem;
       }
     }
+
     &__item {
       padding: 2rem 0;
 
@@ -49,7 +48,7 @@
       }
     }
 
-    @include minWidth(768px) {
+    @include minWidth(960px) {
       display: flex;
       justify-content: flex-end;
       width: 100%;
@@ -60,4 +59,8 @@
       }
     }
   }
+  @include minWidth(960px) {
+    display: flex;
+  }
+
 }
