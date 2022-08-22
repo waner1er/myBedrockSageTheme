@@ -3,8 +3,6 @@
   </x-pictos.burger>
   <nav class="primary-navigation hidden" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
 
-
-{{--    <div class="logo">{{ the_custom_logo() }}</div>--}}
     {{ the_custom_logo() }}
     {!! wp_nav_menu([
 	'menu_class'        => "primary-navigation__list", // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
