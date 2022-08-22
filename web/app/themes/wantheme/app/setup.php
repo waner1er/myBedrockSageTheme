@@ -109,6 +109,7 @@ add_action( 'after_setup_theme', function () {
      *
      */
     add_image_size( 'thumbnail', 300, 300, true );
+    add_image_size( 'mobile-logo', 100, 'auto', true );
 
 
     /**

@@ -3,10 +3,10 @@ import {domReady} from '@roots/sage/client';
 /**
  * app.main
  */
-const main = async(err) => {
+const main = async (err) => {
     if (err) {
       // handle hmr errors
-        console.error(err);
+      console.error(err);
     }
 
     /**
@@ -16,6 +16,9 @@ const main = async(err) => {
       let toggle = document.querySelector('.nav-toggle'),
         sidebar = document.querySelector('.primary-navigation');
       let logo = document.querySelector('.r1-custom-logo');
+      let logoBanner = document.querySelector('.page-header__custom-logo');
+
+      logoBanner.style.display = 'none';
 
       if (window.innerWidth >= 960) {
         sidebar.classList.remove('hidden');
@@ -25,15 +28,23 @@ const main = async(err) => {
         e.preventDefault();
         if (sidebar.classList.contains('hidden')) {
           sidebar.classList.remove('hidden');
+          logoBanner.style.display = 'none';
+
         } else {
           sidebar.classList.add('hidden');
+          logoBanner.style.display = 'block';
+
         }
       });
       window.onresize = function () {
         if (window.innerWidth <= 960) {
           sidebar.classList.add('hidden');
+          logoBanner.style.display = 'block';
+
         } else {
           sidebar.classList.remove('hidden');
+          logoBanner.style.display = 'none';
+
         }
       }
     }
