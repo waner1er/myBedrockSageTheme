@@ -1,4 +1,4 @@
-<a class="sr-only focus:not-sr-only" href="#main">
+<a class="sr-only focus:not-sr-only" href="#main" hidden>
   {{ __('Skip to content') }}
 </a>
 
@@ -7,9 +7,9 @@
 
   @yield('content')
 </main>
-{{--@hasSection('sidebar')--}}
-{{--  <aside class="sidebar">--}}
-{{--    @yield('sidebar')--}}
-{{--  </aside>--}}
-{{--@endif--}}
+@hasSection('sidebar')
+  <aside class="sidebar">
+    @yield('sidebar')
+  </aside>
+@endif
 @include('sections.footer')
