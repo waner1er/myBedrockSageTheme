@@ -9,6 +9,9 @@ const main = async(err) => {
         console.error(err);
     }
 
+  /**
+   * Toggle Navbar
+   */
     function toggleNavMenu()
     {
         let toggle = document.querySelector('.nav-toggle'),
@@ -16,7 +19,7 @@ const main = async(err) => {
         let logo = document.querySelector('.r1-custom-logo');
 
         if (window.innerWidth >= 960) {
-          sidebar.classList.remove('hidden');
+            sidebar.classList.remove('hidden');
         }
 
         toggle.addEventListener('click', function (e) {
@@ -36,7 +39,23 @@ const main = async(err) => {
         }
     }
 
+  /**
+   * down body site if wpNavbar
+   */
+    function marginTopIfWpAdminBar()
+    {
+        let wpAdminBar = document.getElementById('wpadminbar');
+        let body = document.querySelector('body');
+        let navButton = document.querySelector('.nav-toggle');
+
+        if (body.contains(wpAdminBar)) {
+            body.style.marginTop = "2rem"
+            navButton.style.top = "8rem"
+        }
+    }
+
     toggleNavMenu();
+    marginTopIfWpAdminBar();
 
 };
 
