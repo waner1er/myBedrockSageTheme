@@ -3,8 +3,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: $r1-color-white;
-  background: $r1-color-grey-light;
+  background: $r1-color-grey-darken;
   box-shadow: rgb(0 0 0 / 65%) 0px 0px 15px;
 
   &.hidden {
@@ -42,7 +41,7 @@
 
       a {
         text-decoration: none;
-        color: $r1-color-black;
+        color: $r1-color-white;
         font-size: $r1-font-size-xl;
         @include minWidth(960px) {
           font-size: $r1-font-size-lg;

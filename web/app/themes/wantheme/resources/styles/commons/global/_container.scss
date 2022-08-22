@@ -4,6 +4,8 @@
     margin: 0 auto;
 }
 
-.main {
-  padding: 5rem 0;
+.container-large {
+    width: calc(100% - 4.2rem);
+    max-width: 144rem;
+    margin: 0 auto;
 }

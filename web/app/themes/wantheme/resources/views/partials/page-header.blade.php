@@ -1,4 +1,7 @@
-<div class="page-header">
+<div class="page-header ">
+  <div class="page-header__custom-logo">
+    {{the_custom_logo('full')}}
+  </div>
   <h2 class="main-title">
     @section('title')
       @if(is_home())

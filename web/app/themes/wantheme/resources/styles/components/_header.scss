@@ -2,3 +2,27 @@
   position: relative;
 
 }
+
+.page-header {
+  margin: 0 auto 8rem auto;
+  //padding: 1rem 2rem 3rem 2rem;
+  @include minWidth(960px) {
+    margin: 4rem auto;
+  }
+
+  &__custom-logo {
+    background: $r1-color-grey-darken;
+    width: 100%;
+  }
+  .r1-custom-logo {
+
+    &__img {
+      width: 100px;
+      height: auto;
+    }
+  }
+
+  .main-title {
+    margin: 2rem;
+  }
+}
