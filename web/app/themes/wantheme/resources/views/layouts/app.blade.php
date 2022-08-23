@@ -4,7 +4,6 @@
 
 @include('sections.header')
 <main id="main" class="main container mx-auto ">
-
   @yield('content')
 </main>
 @hasSection('sidebar')
