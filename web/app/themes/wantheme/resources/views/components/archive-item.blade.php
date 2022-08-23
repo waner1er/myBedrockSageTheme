@@ -1,6 +1,4 @@
 <div class="r1-archives__item" data-expand-target>
-  <div style="font-size: 40px">commentaires : {{ comments_number() }}</div>
-
   <div class="r1-archives__item-thumbnail">
     @if($thumbnail)
       {!! $thumbnail !!}
