@@ -1,0 +1,28 @@
+&__item {
+  border: 1px solid $r1-color-grey-darken;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  background: $r1-color-white;
+  transition: ease-in-out 0.5s;
+  overflow: scroll;
+
+  &-thumbnail {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    &__img {
+      max-width: 15rem;
+    }
+  }
+  &-post-excerpt {
+    img {
+      max-width: 150px;
+    }
+  }
+
+  &:hover {
+    background: $r1-color-green-light;
+    transition: ease-in-out 0.5s;
+  }
+}
+

@@ -1,17 +1,21 @@
 <div class="r1-archives__item" data-expand-target>
+  <div style="font-size: 40px">commentaires : {{ comments_number() }}</div>
+
   <div class="r1-archives__item-thumbnail">
-    @if(has_post_thumbnail())
-      {{the_post_thumbnail('thumbnail', ['class' => 'r1-archives__item-thumbnail__img'])}}
+    @if($thumbnail)
+      {!! $thumbnail !!}
     @else
-      <img class="r1-archives__item-thumbnail__img" src="{{asset('images/no-img.jpg')}}" alt="no-img">
+      <div >
+        <img width="200px" height="auto" src="{{ asset('images/no-img.jpg') }}" alt="no thumbnail">
+      </div>
     @endif
   </div>
   <div class="r1-archives__item-content">
     <h2 class="r1-archives__item-title">
-      <a href="{{the_permalink()}}" data-expand-link>{{the_title()}}</a>
+      <a href="{{ $permalink }}" data-expand-link>{{ $title }}</a>
     </h2>
     <div class="r1-archives__item-post-excerpt">
-      {{the_excerpt()}}
+      {{ $excerpt }}
     </div>
   </div>
 </div>
