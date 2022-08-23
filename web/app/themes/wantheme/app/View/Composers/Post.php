@@ -15,6 +15,8 @@ class Post extends Composer
         'partials.page-header',
         'partials.content',
         'partials.content-*',
+        'page',
+        'components.archive-item',
     ];
 
     /**
@@ -25,7 +27,10 @@ class Post extends Composer
     public function override()
     {
         return [
-            'title' => $this->title(),
+            'title'     => $this->title(),
+            'excerpt'   => $this->excerpt(),
+            'thumbnail' => $this->thumbnail(),
+            'permalink' => $this->permalink()
         ];
     }
 
@@ -49,12 +54,12 @@ class Post extends Composer
         }
 
         if (is_archive()) {
-            return get_the_archive_title();
+            return post_type_archive_title('', false);
         }
-
         if (is_search()) {
             return sprintf(
                 /* translators: %s is replaced with the search query */
+            /* translators: %s is replaced with the search query */
                 __('Search Results for %s', 'sage'),
                 get_search_query()
             );
@@ -65,5 +70,27 @@ class Post extends Composer
         }
 
         return get_the_title();
+    }
+
+    public function excerpt()
+    {
+        return get_the_excerpt();
+    }
+
+    public function thumbnail()
+    {
+        $post = get_post();
+        if (! isset($post->ID)) {
+            return;
+        } else {
+            $thumbnail = wp_get_attachment_image(get_post_thumbnail_id($post->ID), 'thumbnail');
+        }
+
+        return $thumbnail;
+    }
+
+    public function permalink()
+    {
+        return get_the_permalink();
     }
 }
