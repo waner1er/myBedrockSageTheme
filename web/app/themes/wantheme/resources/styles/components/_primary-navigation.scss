@@ -21,9 +21,10 @@
   &__list {
     padding: 5rem 1rem ;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-
+    width: 50%;
+    margin: auto;
     &.hidden {
       max-height: 0;
       padding: 0;
@@ -37,7 +38,7 @@
       position: relative;
       padding: 1rem;
       border-radius: 8px 8px 0 0;
-      min-width: 20rem;
+      min-width: 10rem;
 
       a {
         text-decoration: none;

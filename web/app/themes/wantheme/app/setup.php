@@ -17,6 +17,9 @@ add_action('carbon_fields_register_fields', function () {
     require(get_stylesheet_directory() . '/app/inc/carbon_fields.php');
 });
 
+
+
+
 add_action('after_setup_theme', function () {
     require_once(get_stylesheet_directory() .'/vendor/autoload.php');
     Carbon_Fields::boot();
@@ -173,7 +176,7 @@ add_action('widgets_init', function () {
                       ] + $config);
 });
 
-include "inc/custom-post-types.php";
+require "inc/custom-post-types.php";
 
 /*
  * image Sizes
@@ -182,3 +185,28 @@ include "inc/custom-post-types.php";
 add_action('after_setup_theme', function () {
     add_image_size('r1-logo', 200, 200, true);
 });
+
+
+function r1_breadcrumb( $before = '<div id="seokey-breadcrumbs">', $after = '</div>' ) {
+    $data   = seokey_breacrumbs_data();
+    $html   = '';
+    $sep    = ' > ';
+    $i      = 0;
+    if ( !empty( $data ) ) {
+        $count = count( $data );
+        $html   = '';
+        foreach ( $data as $item ) {
+            $i++;
+            if ( !empty( $item['name'] ) && !empty( $item['url'] ) ) {
+                if ( $i === $count) {
+                    $html .= esc_html( $item['name'] );
+                } else {
+                    $html .= '<a href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['name'] ) . '</a>' . $sep;
+                }
+            }
+        }
+    }
+    if ( !empty( $html ) ) {
+        return $before . $html . $after;
+    }
+}

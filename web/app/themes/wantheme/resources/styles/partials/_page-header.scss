@@ -1,1 +1,40 @@
+.page-header {
+  margin: 0 auto 8rem auto;
+  @include minWidth(960px) {
+    margin: 4rem auto;
+  }
 
+  &__wrapper {
+    #seokey-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &:before {
+        content: url("./img/voice.svg");
+        width: 30px;
+        height: auto;
+      }
+    }
+  }
+
+  &__custom-logo {
+    background: $r1-color-grey-darken;
+    width: 100%;
+    @include minWidth(960px) {
+      display: none;
+    }
+  }
+
+  .r1-custom-logo {
+
+    &__img {
+      width: 100px;
+      height: auto;
+    }
+  }
+
+  .main-title {
+    margin: 2rem;
+  }
+}
