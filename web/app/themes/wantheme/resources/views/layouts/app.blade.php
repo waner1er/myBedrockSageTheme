@@ -3,6 +3,9 @@
 </a>
 
 @include('sections.header')
+@if ( function_exists( "seokey_breacrumbs_print" ) )
+  {!! seokey_breacrumbs_print() !!}
+@endif
 <main id="main" class="main container mx-auto ">
   @yield('content')
 </main>
@@ -11,4 +14,4 @@
     @yield('sidebar')
   </aside>
 @endif
-{{--@include('sections.footer')--}}
+@include('sections.footer')
