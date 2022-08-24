@@ -20,6 +20,9 @@ add_action('carbon_fields_register_fields', function () {
 add_action('after_setup_theme', function () {
     require_once(get_stylesheet_directory() .'/vendor/autoload.php');
     Carbon_Fields::boot();
+
+    add_image_size('r1-logo', 200, 200, true);
+
 });
 
 
@@ -57,7 +60,9 @@ add_action('after_setup_theme', function () {
         'nav-walker',
         'nice-search',
         'relative-urls',
+        'align-wide'
     ]);
+
 
     /**
      * Disable full-site editing support.
