@@ -2,6 +2,7 @@
 
 namespace App\View\Composers;
 
+use Illuminate\View\View;
 use Roots\Acorn\View\Composer;
 
 class Post extends Composer
@@ -16,7 +17,6 @@ class Post extends Composer
         'partials.content',
         'partials.content-*',
         'page',
-        'components.archive-item',
     ];
 
     /**
@@ -24,13 +24,14 @@ class Post extends Composer
      *
      * @return array
      */
-    public function override()
+    public function with()
     {
         return [
             'title'     => $this->title(),
-            'excerpt'   => $this->excerpt(),
+            'excerpt'   => get_the_excerpt(),
+            'content'   => get_the_content(),
             'thumbnail' => $this->thumbnail(),
-            'permalink' => $this->permalink()
+            'permalink' => get_permalink(),
         ];
     }
 
@@ -58,7 +59,7 @@ class Post extends Composer
         }
         if (is_search()) {
             return sprintf(
-                /* translators: %s is replaced with the search query */
+            /* translators: %s is replaced with the search query */
             /* translators: %s is replaced with the search query */
                 __('Search Results for %s', 'sage'),
                 get_search_query()
@@ -72,11 +73,6 @@ class Post extends Composer
         return get_the_title();
     }
 
-    public function excerpt()
-    {
-        return get_the_excerpt();
-    }
-
     public function thumbnail()
     {
         $post = get_post();
@@ -87,10 +83,5 @@ class Post extends Composer
         }
 
         return $thumbnail;
-    }
-
-    public function permalink()
-    {
-        return get_the_permalink();
     }
 }
