@@ -17,6 +17,7 @@ class Post extends Composer
         'partials.content',
         'partials.content-*',
         'page',
+        'page-header'
     ];
 
     /**
@@ -32,6 +33,7 @@ class Post extends Composer
             'content'   => get_the_content(),
             'thumbnail' => $this->thumbnail(),
             'permalink' => get_permalink(),
+            'logo' => get_custom_logo('full')
         ];
     }
 

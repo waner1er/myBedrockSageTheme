@@ -13,5 +13,4 @@
    'add_sub_menu_ul_class' => 'primary-navigation__list__item__submenu',
 ]) !!}
   </nav>
-   {{ get_search_form() }}
 @endif

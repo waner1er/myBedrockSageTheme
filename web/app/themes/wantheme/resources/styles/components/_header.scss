@@ -5,7 +5,6 @@
 
 .page-header {
   margin: 0 auto 8rem auto;
-  //padding: 1rem 2rem 3rem 2rem;
   @include minWidth(960px) {
     margin: 4rem auto;
   }
@@ -13,6 +12,9 @@
   &__custom-logo {
     background: $r1-color-grey-darken;
     width: 100%;
+    @include minWidth(960px) {
+      display: none;
+    }
   }
   .r1-custom-logo {
 

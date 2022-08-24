@@ -25,7 +25,6 @@ const main = async (err) => {
       }
 
       toggle.addEventListener('click', function (e) {
-        e.preventDefault();
         if (sidebar.classList.contains('hidden')) {
           sidebar.classList.remove('hidden');
           logoBanner.style.display = 'none';
@@ -63,10 +62,13 @@ const main = async (err) => {
       }
     }
 
+    // function alwaysShowCustomLogo() {
+    //   document.querySelector('.page-header__custom-logo').style.display = "block";
+    // }
 
     toggleNavMenu();
     marginTopIfWpAdminBar();
-
+    // alwaysShowCustomLogo();
   }
 ;
 
