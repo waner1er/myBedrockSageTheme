@@ -13,37 +13,41 @@ const main = async (err) => {
      * Toggle Navbar
      */
     function toggleNavMenu() {
-      let toggle = document.querySelector('.nav-toggle'),
-        sidebar = document.querySelector('.primary-navigation');
+      let open = document.querySelector('.nav-burger');
+      let close = document.querySelector('.nav-close');
+      let sidebar = document.querySelector('.primary-navigation');
       let logo = document.querySelector('.r1-custom-logo');
       let logoBanner = document.querySelector('.page-header__custom-logo');
-
-      logoBanner.style.display = 'none';
+      let burgerButton = document.querySelector('.nav-burger');
+      let closeButton = document.querySelector('.nav-close');
 
       if (window.innerWidth >= 960) {
         sidebar.classList.remove('hidden');
       }
 
-      toggle.addEventListener('click', function (e) {
-        if (sidebar.classList.contains('hidden')) {
-          sidebar.classList.remove('hidden');
-          logoBanner.style.display = 'none';
-
-        } else {
-          sidebar.classList.add('hidden');
-          logoBanner.style.display = 'block';
-
-        }
+      open.addEventListener('click', function (e) {
+        sidebar.classList.remove('hidden');
+        logoBanner.classList.remove('active');
+        burgerButton.classList.add('active');
+        closeButton.classList.add('open');
       });
+      close.addEventListener('click', function (e) {
+        sidebar.classList.add('hidden');
+        logoBanner.classList.add('active');
+        burgerButton.classList.remove('active');
+        closeButton.classList.remove('open');
+      })
       window.onresize = function () {
         if (window.innerWidth <= 960) {
           sidebar.classList.add('hidden');
-          logoBanner.style.display = 'block';
-
+          logoBanner.classList.add('active');
+          burgerButton.classList.remove('active');
+          closeButton.classList.remove('open');
         } else {
           sidebar.classList.remove('hidden');
-          logoBanner.style.display = 'none';
-
+          logoBanner.classList.remove('active');
+          closeButton.classList.add('open');
+          burgerButton.classList.add('active');
         }
       }
     }
@@ -54,16 +58,18 @@ const main = async (err) => {
     function marginTopIfWpAdminBar() {
       let wpAdminBar = document.getElementById('wpadminbar');
       let body = document.querySelector('body');
-      let navButton = document.querySelector('.nav-toggle');
+      let navBurger = document.querySelector('.nav-burger');
+      let navClose = document.querySelector('.nav-close');
 
       if (body.contains(wpAdminBar)) {
         body.style.marginTop = "2rem"
-        navButton.style.top = "8rem"
+        navBurger.style.top = "8rem"
+        navClose.style.top = "8rem"
       }
     }
 
-    // function alwaysShowCustomLogo() {
-    //   document.querySelector('.page-header__custom-logo').style.display = "block";
+    // function disableEaseOnLoad() {
+    //   document.querySelector('.page-header__custom-logo').style.opacity = 0;
     // }
 
     toggleNavMenu();

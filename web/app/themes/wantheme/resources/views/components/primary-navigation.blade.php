@@ -1,6 +1,5 @@
 @if (has_nav_menu('primary_navigation'))
-  <x-pictos.burger id="nav-toggle" width="50px">
-  </x-pictos.burger>
+
   <nav class="primary-navigation hidden" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
     {{ the_custom_logo() }}
     {!! wp_nav_menu([
@@ -13,4 +12,7 @@
    'add_sub_menu_ul_class' => 'primary-navigation__list__item__submenu',
 ]) !!}
   </nav>
+  <x-pictos.burger id="nav-burger" width="50px">
+  </x-pictos.burger>
+  <x-pictos.close id="nav-close" width="50px"/>
 @endif

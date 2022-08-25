@@ -1,10 +1,11 @@
 .page-header {
   margin: 0 auto 8rem auto;
   @include minWidth(960px) {
-    margin: 4rem auto;
+    margin:23rem auto 0;
   }
 
   &__wrapper {
+    padding-top: 2rem;
     #seokey-breadcrumbs {
       display: flex;
       align-items: center;
@@ -19,8 +20,12 @@
   }
 
   &__custom-logo {
-    background: $r1-color-grey-darken;
+    //background: $r1-color-green;
+    box-shadow: rgb(0 0 0 / 65%) 0px 0px 15px;
     width: 100%;
+    &.active {
+      display: block;
+    }
     @include minWidth(960px) {
       display: none;
     }
