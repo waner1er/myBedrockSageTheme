@@ -3,7 +3,7 @@
   border-radius: 0.4rem;
   padding: 1rem;
   background: $r1-color-white;
-  transition: ease-in-out 0.5s;
+  transition: $r1-transition;
   overflow: scroll;
 
   &-thumbnail {
@@ -22,7 +22,7 @@
 
   &:hover {
     background: $r1-color-green-light;
-    transition: ease-in-out 0.5s;
+    transition: $r1-transition;
   }
 }
 
