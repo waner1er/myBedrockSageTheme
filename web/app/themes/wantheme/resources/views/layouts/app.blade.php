@@ -3,12 +3,20 @@
 </a>
 
 @include('sections.header')
-<main id="main" class="main container mx-auto ">
-  @yield('content')
-</main>
-@hasSection('sidebar')
-  <aside class="sidebar">
-    @yield('sidebar')
-  </aside>
-@endif
+<div id="main-container">
+  @if(have_posts())
+    <main id="main" class="main container mx-auto ">
+      <div id="content">
+        @yield('content')
+      </div>
+    </main>
+  @else
+    toto
+  @endif
+  @hasSection('sidebar')
+    <aside class="sidebar">
+      @yield('sidebar')
+    </aside>
+  @endif
+</div>
 @include('sections.footer')

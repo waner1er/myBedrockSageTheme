@@ -187,26 +187,4 @@ add_action('after_setup_theme', function () {
 });
 
 
-function r1_breadcrumb( $before = '<div id="seokey-breadcrumbs">', $after = '</div>' ) {
-    $data   = seokey_breacrumbs_data();
-    $html   = '';
-    $sep    = ' > ';
-    $i      = 0;
-    if ( !empty( $data ) ) {
-        $count = count( $data );
-        $html   = '';
-        foreach ( $data as $item ) {
-            $i++;
-            if ( !empty( $item['name'] ) && !empty( $item['url'] ) ) {
-                if ( $i === $count) {
-                    $html .= esc_html( $item['name'] );
-                } else {
-                    $html .= '<a href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['name'] ) . '</a>' . $sep;
-                }
-            }
-        }
-    }
-    if ( !empty( $html ) ) {
-        return $before . $html . $after;
-    }
-}
+
