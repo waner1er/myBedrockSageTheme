@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@wordpress/blocks": "^11.14.0",
+    "aos": "^3.0.0-beta.6",
     "sass": "^1.54.4"
   }
 }

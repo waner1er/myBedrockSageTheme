@@ -9,7 +9,8 @@ const main = async (err) => {
       console.error(err);
     }
 
-    /**
+
+  /**
      * Toggle Navbar
      */
     function toggleNavMenu() {
@@ -68,13 +69,50 @@ const main = async (err) => {
       }
     }
 
-    // function disableEaseOnLoad() {
-    //   document.querySelector('.page-header__custom-logo').style.opacity = 0;
+    // function scrollFunction() {
+    //   let button = document.getElementById('myBtn');
+    //   window.addEventListener('scroll', (event) => {
+    //     let scroll = window.scrollY;
+    //     console.log(scroll);
+    //     if (scroll >= 20 ) {
+    //       button.style.display = "block";
+    //     } else {
+    //       console.log('tata')
+    //       button.style.display = "none";
+    //     }
+    //   })
     // }
 
+    /**
+     * Scroll To Top button
+     */
+    function topFunction() {
+      let button = document.getElementById('toTop');
+      window.addEventListener('scroll', (event) => {
+        let scroll = window.scrollY;
+        if (scroll >= 20) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      })
+      button.addEventListener('click', function () {
+        document.documentElement.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+
+    /**
+     * Active functions
+     */
     toggleNavMenu();
     marginTopIfWpAdminBar();
-    // alwaysShowCustomLogo();
+    topFunction();
+    AOS.init();
+
   }
 ;
 
