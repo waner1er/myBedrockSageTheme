@@ -7,15 +7,15 @@ html {
 }
 
 body {
-  font-family: $font-text;
+  font-family: $font-text ;
   font-size: 1.6rem;
-  margin-bottom: 5rem;
   background: $r1-color-blue-dark;
   color: $r1-color-blue-dark;
 }
 
 #main-container {
   min-height: 100vh;
+  margin-bottom: 5rem;
 }
 
 main {

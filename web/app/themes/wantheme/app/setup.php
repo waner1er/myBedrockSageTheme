@@ -6,19 +6,33 @@
 
 namespace App;
 
+use Carbon_Fields\Block;
 use Carbon_Fields\Carbon_Fields;
-use function Roots\bundle;
-
-
-use Carbon_Fields\Container;
 use Carbon_Fields\Field;
+use function Roots\bundle;
 
 add_action('carbon_fields_register_fields', function () {
     require(get_stylesheet_directory() . '/app/inc/carbon_fields.php');
+    Block::make( 'Flight' )
+         ->add_fields( [
+             Field::make( 'map', 'from' ),
+             Field::make( 'date_time', 'departure_timestamp' ),
+             Field::make( 'map', 'destination' ),
+             Field::make( 'date_time', 'arrival_timestamp' ),
+         ] )
+         ->set_render_callback( function( $flight ) {
+             ?>
+             <p>
+                 Flight departs
+                 from <?php echo esc_html( $flight['from']['address'] ) ?> at
+                 <?php echo $flight['departure_timestamp'] ?>
+                 and arrives
+                 to <?php echo esc_html( $flight['destination']['address'] ) ?> at
+                 <?php echo $flight['arrival_timestamp'] ?>
+             </p>
+             <?php
+         });
 });
-
-
-
 
 add_action('after_setup_theme', function () {
     require_once(get_stylesheet_directory() .'/vendor/autoload.php');

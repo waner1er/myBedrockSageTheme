@@ -5,8 +5,9 @@
 
   <div class="entry-content">
     {!! $content !!}
+{{--    {{get_the_ID()}}--}}
 
-    {{get_the_ID()}}
+
   </div>
 
   <footer>
@@ -15,6 +16,9 @@
 
   <div class="comments">
   @include('partials.comments')
+    <div data-aos="fade-right">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut est in quae. Assumenda aut distinctio facere facilis fuga magni nihil numquam odio placeat quia quidem reprehenderit tenetur, veritatis, voluptates.
+    </div>
   </div>
 </article>
 

@@ -82,3 +82,9 @@ add_theme_support('sage');
 
 add_theme_support('align-wide');
 
+
+add_action( 'wp_enqueue_scripts', 'add_aos_animation' );
+function add_aos_animation() {
+    wp_enqueue_style('AOS_animate', 'https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css', false, null);
+    wp_enqueue_script('AOS', 'https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js', false, null, true);
+}
