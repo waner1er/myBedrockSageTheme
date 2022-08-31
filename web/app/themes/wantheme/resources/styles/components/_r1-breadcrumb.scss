@@ -1,0 +1,29 @@
+#r1-breadcrumbs, .r1-breadcrumbs {
+  display: flex;
+  align-items: center;
+
+  &__element {
+    &--link {
+      color: $r1-color-blue-light;
+      @include minWidth(960px) {
+        color: $r1-color-blue-dark;
+      }
+
+      &:hover {
+        color: $r1-color-white;
+      }
+    }
+
+    &--last {
+      color: $r1-color-white;
+    }
+
+  }
+
+  &__separator {
+  color: $r1-color-white;
+    @include minWidth(960px) {
+      color: $r1-color-blue-dark;
+    }
+  }
+}
